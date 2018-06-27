@@ -1,6 +1,6 @@
 # Final Project - Angela, Sasi, Anthony
 
-https://aj906.github.io/Project1/
+https://github.com/AJ906/finalproject-ajskas.git
 
 Team (Name TBD - Music Friend Finder)
 ============ Georgia Tech Coding Bootcamp Fullstack Web Development Final Project #3
