@@ -1,0 +1,26 @@
+{
+  "name": "finalproject-ajskas",
+  "version": "1.0.0",
+  "description": "https://github.com/AJ906/finalproject-ajskas.git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AJ906/finalproject-ajskas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AJ906/finalproject-ajskas/issues"
+  },
+  "homepage": "https://github.com/AJ906/finalproject-ajskas#readme",
+  "private": true,
+  "proxy": "http://localhost:3001/",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.0"
+  }
+}
