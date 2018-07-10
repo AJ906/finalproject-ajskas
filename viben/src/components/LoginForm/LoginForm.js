@@ -17,7 +17,7 @@ const LoginForm = props => (
                 onChange={props.handleInputChange}
                 required
             />
-            <label htmlFor="start-year">
+            <label htmlFor="pw">
                 <strong>Password</strong>
             </label>
             <input
@@ -42,31 +42,6 @@ const LoginForm = props => (
         </div>
     </form>
 );
-
-
-
-
-// <div className="row">
-//
-
-//
-//     <div className="col s2 right">
-//         <button onClick={handleClick} className="btn waves-effect waves-light" type="submit" name="action" >
-//             Login
-//         </button>
-//     </div>
-//     <div className="input-field col s2 right">
-//         <input placeholder="Password" id="pw" type="password" className="validate"  />
-//     </div>
-//     <div className="input-field col s2 right">
-//         <input placeholder="Email" id="email" type="email" className="validate" />
-//     </div>
-//
-// </div>
-
-
-
-
 
 
 export default LoginForm;
