@@ -1,53 +1,46 @@
 import React, { Component } from "react";
-import Slider from "../../components/Slider/Slider";
-import Nav from "../../components/Nav/Nav";
+//import Jumbotron from "../../components/Jumbotron";
+import Slider from "../../components/Slider";
+import Nav from "../../components/Nav";
+import Footer from "../../components/Footer";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
-//import { Col, Row, Container } from "../../components/Grid";
-//import { List, ListItem } from "../../components/List";
-//import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Col, Row, Container } from "../../components/Grid";
+//import { List } from "../../components/List";
+
+import LoginForm from "../../components/LoginForm";
 
 class Login extends Component {
-
     state = {
-        emailInput: "",
-        pwInput: "",
+        email: "",
+        pw: ""
     };
 
     handleInputChange = event => {
-        const { type, value } = event.target;
+        const { name, value } = event.target;
         this.setState({
-            [type]: value
+            [name]: value
         });
     };
 
 
     handleFormSubmit = event => {
         event.preventDefault();
-        this.setState({
-            emailInput: this.state.email,
-            pwInput:this.state.pw
-
-        });
+       console.log(this.state.email)
+       console.log(this.state.pw)
     };
 
 
-
-    // componentDidMount() {
-    //     $(‘.slider’).slider(); //Initialize slider
-    //     $(‘.slider’).slider(‘next’); //Roll slider past initial fadein
-    // },
-
     render() {
         return (
-
-        <h1>test</h1>
-
+                <LoginForm
+                    handleInputChange={this.handleInputChange}
+                    handleFormSubmit={this.handleFormSubmit}
+                    email={this.state.email}
+                    pw={this.state.pw}
+                />
 
         );
     }
 }
-
-
 
 export default Login;
