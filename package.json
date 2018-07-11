@@ -2,14 +2,11 @@
   "name": "finalproject-ajskas",
   "version": "1.0.0",
   "description": "https://github.com/AJ906/finalproject-ajskas.git",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "server": "node server.js",
-    "client": "node scripts/start-client.js",
-    "build": "node scripts/build.js",
-    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "installDeps": "yarn install && cd client && yarn install"
+    "start": "node server.js",
+    "postinstall":"cd viben && npm install"
   },
   "repository": {
     "type": "git",
