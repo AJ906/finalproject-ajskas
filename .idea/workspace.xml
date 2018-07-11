@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90331505-fedf-4193-a71e-a6bef80edf5f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viben/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/viben/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/viben/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viben/src/components/MusicSearchForm/MusicSearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/viben/src/components/MusicSearchForm/MusicSearchForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viben/src/components/MusicSearchForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/viben/src/components/MusicSearchForm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viben/src/pages/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/viben/src/pages/Search/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viben/src/utils/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/viben/src/utils/API.js" afterDir="false" />
-    </list>
+    <list default="true" id="90331505-fedf-4193-a71e-a6bef80edf5f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -62,8 +52,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+            <state relative-caret-position="209">
+              <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -232,12 +222,12 @@
       <workItem from="1530569336648" duration="14105000" />
       <workItem from="1530821740169" duration="27965000" />
       <workItem from="1531001887269" duration="25048000" />
-      <workItem from="1531179881759" duration="33952000" />
+      <workItem from="1531179881759" duration="34044000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101070000" />
+    <option name="totallyTimeSpent" value="101162000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="778" extended-state="6" />
@@ -627,8 +617,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        <state relative-caret-position="209">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
       </provider>
     </entry>
