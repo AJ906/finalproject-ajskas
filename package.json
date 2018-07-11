@@ -2,9 +2,15 @@
   "name": "finalproject-ajskas",
   "version": "1.0.0",
   "description": "https://github.com/AJ906/finalproject-ajskas.git",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'viben/*'\" \"npm run viben\"",
+    "client": "cd viben && npm run start",
+    "install": "cd viben && yarn install",
+    "build": "cd viben && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
