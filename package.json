@@ -9,7 +9,7 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'viben/*'\" \"npm run viben\"",
     "client": "cd viben && npm run start",
-    "install": "cd viben && npm i yarn-install",
+    "install": "cd viben && npm install && npm i yarn-install",
     "build": "cd viben && npm run build",
     "heroku-postbuild": "npm run build"
   },
