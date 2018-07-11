@@ -4,6 +4,7 @@
   "description": "https://github.com/AJ906/finalproject-ajskas.git",
   "main": "server.js",
   "scripts": {
+    "server": "node server.js",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'viben/*'\" \"npm run viben\"",
