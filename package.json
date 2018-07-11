@@ -4,13 +4,14 @@
   "description": "https://github.com/AJ906/finalproject-ajskas.git",
   "main": "server.js",
   "scripts": {
-    "postinstall": "cd viben && yarn install && yarn run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'viben/*'\" \"npm run viben\"",
     "client": "cd viben && npm run start",
-    "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run viben\"",
+    "install": "cd viben && npm i yarn-install",
     "build": "cd viben && npm run build",
-    "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
-    "server": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
