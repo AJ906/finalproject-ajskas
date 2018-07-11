@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall":"cd viben && npm install && yarn install && yarn run build",
-    "start": "node server.js"
+    "postinstall":"cd viben && npm install"
   },
   "repository": {
     "type": "git",
