@@ -1,21 +1,16 @@
 {
-  "name": "finalproject-ajskas",
+  "name": "nyt-react",
   "version": "1.0.0",
-  "description": "https://github.com/AJ906/finalproject-ajskas.git",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "node server.js",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'viben/*'\" \"npm run viben\"",
-    "client": "cd viben && npm run start",
-    "install": "cd viben && npm install && npm i yarn-install",
-    "build": "cd viben && npm run build",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && yarn install;",
+    "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AJ906/finalproject-ajskas.git"
   },
   "author": "",
   "license": "ISC",
@@ -23,15 +18,12 @@
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"
   },
-  "bugs": {
-    "url": "https://github.com/AJ906/finalproject-ajskas/issues"
-  },
-  "homepage": "https://github.com/AJ906/finalproject-ajskas#readme",
-  "private": true,
-  "proxy": "http://localhost:3001/",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "mongoose": "^5.2.0"
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.0.17"
   }
 }
+git
