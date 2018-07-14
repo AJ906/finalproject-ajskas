@@ -1,7 +1,10 @@
 import React from "react";
+import "./ListItem.css";
 
 export const List = ({ children }) => (
-  <ul className="list-group">
+    <div className="flex-container">
+  <ul className="list-group-horizontal">
     {children}
   </ul>
+    </div>
 );

@@ -5,7 +5,7 @@ import "./Nav.css";
 const Nav = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <Link className="navbar-brand" to="/">
-      Vibe'n
+      Vibin'
     </Link>
     <button
       className="navbar-toggler"

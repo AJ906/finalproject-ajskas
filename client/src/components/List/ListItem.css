@@ -1,0 +1,14 @@
+
+
+.list-group-item {
+
+    display: inline-flex;
+    width:50%;
+
+}
+
+.flex-container {
+
+    float:left;
+}
+

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-//import { Col, Row, Container } from "../../components/Grid";
+import { Col, Row } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 //import { Input, TextArea, FormBtn } from "../../components/Form";
 import MusicSearchForm from "../../components/MusicSearchForm";
@@ -27,7 +27,8 @@ class Search extends Component {
 
     state = {
         searchValue: "",
-        searchResults: {}
+        searchResults: [],
+        candleLights: []
     };
 
     searchMusic = (musicSearch) => {
@@ -47,13 +48,6 @@ class Search extends Component {
                 console.log(res.data.results[0].primaryGenreName);
                 console.log(res.data.results[0].trackId);
                 console.log(res.data.results[0].trackViewUrl);
-                albumArt = res.data.results[0].artworkUrl100;
-                artistName = res.data.results[0].artistName;
-                trackName = res.data.results[0].trackCensoredName;
-                previewURL = res.data.results[0].previewUrl;
-                genreType = res.data.results[0].primaryGenreName;
-                song_id = res.data.results[0].trackId;
-                trackURL = res.data.results[0].trackViewUrl;
 
             })
             .catch(err => {
@@ -81,6 +75,27 @@ class Search extends Component {
 
     };
 
+    handleCandleLight = id => {
+        const track = this.state.searchResults.find(track => track._id === id);
+        API.saveTrack(track)
+            .then(res => {
+                console.log('Success saveTrack', res);
+
+                if (res.data.status === "error") {
+                    throw new Error(res.data.message);
+
+                }
+                this.setState({ candleLights: res.data});
+                console.log(res);
+                console.log(this.state.candleLights);
+
+            })
+            .catch(err => {
+                console.log('error saveTrack', err)
+                this.setState({ error: err.message })
+            });
+    };
+
     render() {
         return (
             <Container>
@@ -93,17 +108,25 @@ class Search extends Component {
             </Card>
                 <Card title="Results">
                     {this.state.searchResults.resultCount ? (
-                        <List>
-                            {this.state.searchResults.results.map(result => (
-                                <SearchCard
-                                    artwork={result.artworkUrl100}
-                                    dtid={result.trackId}
-                                    artistName={result.artistName}
-                                    trackName={result.trackName}
-                                    playBack={result.previewUrl}
-                                />
-                            ))}
-                        </List>
+                        <Row>
+                            <Col size="md-12">
+                                <List key={this.state.searchResults.trackId}>
+                                    {this.state.searchResults.results.map(result => (
+                                        <SearchCard
+                                            artwork={result.artworkUrl100}
+                                            dtid={result.trackId}
+                                            artistName={result.artistName}
+                                            trackName={result.trackName}
+                                            playBack={result.previewUrl}
+                                            _id={result.trackId}
+                                            trackUrl={result.trackViewUrl}
+                                            buttonText={"Light a Candle"}
+                                            handleClick={this.handleCandleLight}
+                                        />
+                                    ))}
+                                </List>
+                            </Col>
+                        </Row>
                     ) : (
                         <h2 className="text-center">{this.state.message}</h2>
                     )}
