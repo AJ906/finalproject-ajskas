@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90331505-fedf-4193-a71e-a6bef80edf5f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/List/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/List/List.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/List/ListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/List/ListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Nav/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Nav/Nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SearchCard/SearchCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SearchCard/SearchCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Search/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/articleController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/nytController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/article.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/articles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/nyt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="90331505-fedf-4193-a71e-a6bef80edf5f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -382,25 +364,24 @@
       <workItem from="1530569336648" duration="14105000" />
       <workItem from="1530821740169" duration="27965000" />
       <workItem from="1531001887269" duration="25048000" />
-      <workItem from="1531179881759" duration="74728000" />
+      <workItem from="1531179881759" duration="75031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141846000" />
+    <option name="totallyTimeSpent" value="142149000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="778" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29308975" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29308975" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.9603524" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32839963" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4988086" visible="true" weight="0.39060205" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4988086" visible="true" weight="0.39060205" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
