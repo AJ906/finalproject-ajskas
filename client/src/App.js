@@ -6,6 +6,8 @@ import Search from "./pages/Search";
 import Login from "./pages/Login";
 import Nav from "./components/Nav";
 
+document.body.style.overflow = "hidden";
+
 const App = () => (
   <Router>
     <div>

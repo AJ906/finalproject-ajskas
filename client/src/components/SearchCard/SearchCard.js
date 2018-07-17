@@ -2,9 +2,9 @@ import React from "react";
 //import formatDate from "../../utils/formatDate";
 import { ListItem } from "../List";
 
-// Data pinpoints music that matters with everybodys top 10/Song Constellation
+// Data pinpoints music that matters with everybodys top 13ls/Song Constellation
 // Universe theme, comos etc.
-// Song Constallation interactive view of songs
+// Song Constellation interactive view of songs
 
 const SearchCard = ({ artwork, dtid, playBack, trackName, artistName, _id, trackUrl, buttonText, handleClick }) => (
   <ListItem>

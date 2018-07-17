@@ -1,0 +1,52 @@
+.vibers{
+    background-color: rgba(133, 136, 152, 0.85);
+    padding: 10px 10px 10px 10px;
+    border-radius: 25px;
+
+}
+
+
+
+#vcHeader {
+    position: fixed;
+    color: #ffffff;
+    /*background-color: rgba(133, 136, 152, 0.85);*/
+    padding: 10px 10px 10px 10px;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 18px;
+    margin: 0 0 0 234px;
+}
+
+#viber1{
+position:fixed;
+margin: 0 0 0 700px;
+}
+#viber2{
+position:fixed;
+    margin: 100px 0 0 800px;
+}
+#viber3{
+position:fixed;
+    margin: 200px 0 0 900px;
+}
+#viber4{
+position:fixed;
+}
+#viber5{
+position:fixed;
+}
+#viber6{
+position:fixed;
+}
+#viber7{
+position:fixed;
+}
+#viber8{
+position:fixed;
+}
+#viber9{
+position:fixed;
+}
+#viber10{
+position:fixed;
+}

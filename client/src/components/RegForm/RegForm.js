@@ -50,7 +50,7 @@ const RegForm = props => (
                                 <input
                                     className="form-control"
                                     id="pw"
-                                    type="number"
+                                    type="text"
                                     value={props.pw}
                                     placeholder="create new password"
                                     name="pw"
@@ -63,13 +63,50 @@ const RegForm = props => (
                                 <input
                                     className="form-control"
                                     id="pw2compare"
-                                    type="number"
+                                    type="text"
                                     value={props.pw2compare}
                                     placeholder="re-enter password"
                                     name="pw2compare"
                                     onChange={props.handleInputChange}
                                     required
                                 />
+                                <label htmlFor="photoURL">
+                                    <strong>Link Profile Photo (optional)</strong>
+                                </label>
+                                <input
+                                    className="form-control"
+                                    id="photoURL"
+                                    type="text"
+                                    value={props.photoURL}
+                                    placeholder="enter photo web address"
+                                    name="photoURL"
+                                    onChange={props.handleInputChange}
+                                />
+                                <label htmlFor="instagram">
+                                    <strong>Link your Instagram account (optional)</strong>
+                                </label>
+                                <input
+                                    className="form-control"
+                                    id="instagram"
+                                    type="text"
+                                    value={props.instagram}
+                                    placeholder="enter Instagram account web address"
+                                    name="instagram"
+                                    onChange={props.handleInputChange}
+                                />
+                                <label htmlFor="twitter">
+                                    <strong>Link your Twitter account (optional)</strong>
+                                </label>
+                                <input
+                                    className="form-control"
+                                    id="twitter"
+                                    type="text"
+                                    value={props.twitter}
+                                    placeholder="enter Twitter account web address"
+                                    name="twitter"
+                                    onChange={props.handleInputChange}
+                                />
+
                             </div>
                             <div className="pull-right">
                                 <button

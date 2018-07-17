@@ -8,6 +8,9 @@ import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List } from "../../components/List";
+import "./Home.css";
+import ProView from "../../components/ProView/ProView";
+import Particles from 'react-particles-js';
 
 class Home extends Component {
   state = {
@@ -58,45 +61,141 @@ class Home extends Component {
       <Container>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-              <h1 className="text-center">
-                <strong>Vibe'n</strong>
-              </h1>
-              <h2 className="text-center">
-                All Things Music
-              </h2>
-            </Jumbotron>
+              <h2 id="vcHeader"> Vibe Catcher </h2>
+                <div id="constellation">
+                    <Row>
+                        <Col size="md-6">
+                            <p className="vibers" id="viber1">1  <span></span></p>
+                            <p className="vibers" id="viber2">2  <span></span></p>
+                            <p className="vibers" id="viber3">3  <span></span></p>
+                            <p className="vibers" id="viber4">4  <span></span></p>
+                            <p className="vibers" id="viber5">5  <span></span></p>
+                        </Col>
+                        <Col size="md-6">
+                            <p className="vibers" id="viber6">6  <span></span></p>
+                            <p className="vibers" id="viber7">7  <span></span></p>
+                            <p className="vibers" id="viber8">8  <span></span></p>
+                            <p className="vibers" id="viber9">9  <span></span></p>
+                            <p className="vibers" id="viber10">10 <span></span></p>
+                        </Col>
+                    </Row>
+                </div>
+              <Particles
+                  params={{
+                      particles: {
+                          number: {
+                              value: 130,
+                              density: {
+                                  enable: true,
+                                  value_area: 800
+                              }
+                          },
+                          color: {
+                              value: "#ffffff"
+                          },
+                          shape: {
+                              type: "circle",
+                              stroke: {
+                                  width: 0,
+                                  color: "#000000"
+                              },
+                              polygon: {
+                                  nb_sides: 5
+                              },
+                              image: {
+                                  src: "img/github.svg",
+                                  width: 100,
+                                  height: 100
+                              }
+                          },
+                          opacity: {
+                              value: 0.5,
+                              random: false,
+                              anim: {
+                                  enable: false
+                              },
+                              speed: 1,
+                              opacity_min: 0.1,
+                              sync: false
+                          }
+                      },
+                      line_linked: {
+                          shadow: {
+                              enable: true,
+                              color: "#3CA9D1",
+                              blur: 1
+                          },
+                          enable: true,
+                          distance: 150,
+                          color: "#ffffff",
+                          opacity: 0.4,
+                          width: 1
+                      },
+                      move: {
+                          enable: true,
+                          speed: 6,
+                          direction: "none",
+                          random: false,
+                          straight: false,
+                          out_mode: "out",
+                          bounce: true,
+                          attract: {
+                              enable: false,
+                              rotateX: 600,
+                              rotateY: 1200
+                          }
+                      },
+                      interactivity: {
+                          detect_on: "canvas",
+                          events: {
+                              onhover: {
+                                  enable: true,
+                                  mode: "repulse"
+                              },
+                              onclick: {
+                                  enable: true,
+                                  mode: "push"
+                              },
+                              resize: true
+                          },
+                          modes: {
+                              grab: {
+                                  distance: 400,
+                                  line_linked: {
+                                      opacity: 1
+                                  }
+                              },
+                              bubble: {
+                                  distance: 400,
+                                  size: 40,
+                                  duration: 2,
+                                  opacity: 8,
+                                  speed: 3
+                              },
+                              repulse: {
+                                  distance: 200,
+                                  duration: 0.4
+                              },
+                              push: {
+                                  particles_nb: 4
+                              },
+                              remove: {
+                                  particles_nb: 2
+                              }
+                          }
+                      },
+                      retina_detect: true
+                  }}
+                  style={{
+                      width: '100%',
+                      height: '100%',
+                      backgroundImage: `url(${"http://thestrategicfellow.com/wp-content/uploads/2018/07/galaxy.jpg"})`
+                  }}
+              />
           </Col>
-          <Col size="md-12">
-            <Card title="Vibe Catcher" icon="">
 
-            </Card>
-          </Col>
         </Row>
-        {/*<Row>*/}
-          {/*<Col size="md-12">*/}
-            {/*<Card title="Results">*/}
-              {/*{this.state.articles.length ? (*/}
-                {/*<List>*/}
-                  {/*{this.state.articles.map(article => (*/}
-                    {/*<Article*/}
-                      {/*key={article._id}*/}
-                      {/*_id={article._id}*/}
-                      {/*title={article.headline.main}*/}
-                      {/*url={article.web_url}*/}
-                      {/*date={article.pub_date}*/}
-                      {/*handleClick={this.handleArticleSave}*/}
-                      {/*buttonText="Save Article"*/}
-                    {/*/>*/}
-                  {/*))}*/}
-                {/*</List>*/}
-              {/*) : (*/}
-                {/*<h2 className="text-center">{this.state.message}</h2>*/}
-              {/*)}*/}
-            {/*</Card>*/}
-          {/*</Col>*/}
-        {/*</Row>*/}
-        <Footer />
+
       </Container>
 
     );

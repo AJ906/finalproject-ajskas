@@ -1,9 +1,9 @@
 import React from "react";
 import "./ListItem.css";
 
-export const List = ({ children }) => (
+export const List = ({ children, artwork, dtid, playBack, trackName, artistName, _id, trackUrl, buttonText, handleClick}) => (
     <div className="flex-container">
-  <ul className="list-group-horizontal">
+  <ul key={artistName} className="list-group-horizontal">
     {children}
   </ul>
     </div>

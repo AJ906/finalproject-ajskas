@@ -110,7 +110,7 @@ class Search extends Component {
                     {this.state.searchResults.resultCount ? (
                         <Row>
                             <Col size="md-12">
-                                <List key={this.state.searchResults.trackId}>
+                                <List>
                                     {this.state.searchResults.results.map(result => (
                                         <SearchCard
                                             artwork={result.artworkUrl100}
