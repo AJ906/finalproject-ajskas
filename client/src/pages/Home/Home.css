@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+
 .vibers{
     background-color: rgba(133, 136, 152, 0.85);
     padding: 10px 10px 10px 10px;
@@ -5,48 +7,67 @@
 
 }
 
-
-
 #vcHeader {
     position: fixed;
     color: #ffffff;
     /*background-color: rgba(133, 136, 152, 0.85);*/
     padding: 10px 10px 10px 10px;
-    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 18px;
-    margin: 0 0 0 234px;
+    margin: 0 0 0 0;
+}
+
+#vibeCatcher{
+    margin: 3vh 0 0 0;
+    position: fixed;
+    width:155vh;
+    /*height:100vh;*/
+}
+#constellation {
+    margin: 0 0 0 10vh;
 }
 
 #viber1{
 position:fixed;
-margin: 0 0 0 700px;
+margin: -5vh 0 0 72vh;
 }
 #viber2{
 position:fixed;
-    margin: 100px 0 0 800px;
+    margin: 5vh 0 0 92vh;
 }
 #viber3{
 position:fixed;
-    margin: 200px 0 0 900px;
+    margin: 20vh 0 0 105vh;
 }
 #viber4{
 position:fixed;
+    margin: 35vh 0 0 92vh;
 }
 #viber5{
 position:fixed;
+    margin: 40vh 0 0 72vh;
 }
 #viber6{
 position:fixed;
+    margin: 40vh 0 0 43vh;
 }
 #viber7{
 position:fixed;
+    margin: 35vh 0 0 23vh;
 }
 #viber8{
 position:fixed;
+    margin: 20vh 0 0 10vh;
 }
 #viber9{
 position:fixed;
+    margin: 5vh 0 0 23vh;
 }
 #viber10{
 position:fixed;
+    margin: -5vh 0 0 43vh;
+}
+#user{
+    position:fixed;
+    margin: 20vh 0 0 56vh;
 }

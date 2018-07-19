@@ -1,12 +1,13 @@
 import React from "react";
 //import formatDate from "../../utils/formatDate";
 import { ListItem } from "../List";
+import "./SearchCard.css";
 
 // Data pinpoints music that matters with everybodys top 13ls/Song Constellation
 // Universe theme, comos etc.
 // Song Constellation interactive view of songs
 
-const SearchCard = ({ artwork, dtid, playBack, trackName, artistName, _id, trackUrl, buttonText, handleClick }) => (
+const SearchCard = ({ artwork, dtid, playback, trackName, artistName, _id, trackUrl, buttonText, handleClick }) => (
   <ListItem>
 
       <div>
@@ -19,9 +20,8 @@ const SearchCard = ({ artwork, dtid, playBack, trackName, artistName, _id, track
           <button onClick={() => handleClick(_id)} className="btn btn-primary">
               {buttonText}
           </button>
-          <audio controls className="audio">
-              <source src={playBack}  />
-          </audio>
+
+          <audio id="jambox" controls className="audio" src={playback} />
 
           <span className="btn-group pull-right">
               <a
@@ -35,6 +35,7 @@ const SearchCard = ({ artwork, dtid, playBack, trackName, artistName, _id, track
               <button onClick={() => handleClick(_id)} className="btn btn-primary">
           + Song Constellation
         </button>
+
 
       </span>
       </div>

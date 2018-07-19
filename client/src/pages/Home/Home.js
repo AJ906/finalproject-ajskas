@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Nav from "../../components/Nav";
 import Jumbotron from "../../components/Jumbotron";
 import Card from "../../components/Card";
-import Form from "../../components/Form";
 import SearchCard from "../../components/SearchCard";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
@@ -11,6 +10,7 @@ import { List } from "../../components/List";
 import "./Home.css";
 import ProView from "../../components/ProView/ProView";
 import Particles from 'react-particles-js';
+import Viber from "../../components/Viber/Viber";
 
 class Home extends Component {
   state = {
@@ -57,29 +57,87 @@ class Home extends Component {
 
   render() {
     return (
-
+        <div id="vibeCatcher">
       <Container>
         <Row>
           <Col size="md-12">
               <h2 id="vcHeader"> Vibe Catcher </h2>
                 <div id="constellation">
                     <Row>
-                        <Col size="md-6">
-                            <p className="vibers" id="viber1">1  <span></span></p>
-                            <p className="vibers" id="viber2">2  <span></span></p>
-                            <p className="vibers" id="viber3">3  <span></span></p>
-                            <p className="vibers" id="viber4">4  <span></span></p>
-                            <p className="vibers" id="viber5">5  <span></span></p>
-                        </Col>
-                        <Col size="md-6">
-                            <p className="vibers" id="viber6">6  <span></span></p>
-                            <p className="vibers" id="viber7">7  <span></span></p>
-                            <p className="vibers" id="viber8">8  <span></span></p>
-                            <p className="vibers" id="viber9">9  <span></span></p>
-                            <p className="vibers" id="viber10">10 <span></span></p>
+                        <Col size="md-12">
+                            <div className="vibers" id="viber1">
+                                <Viber
+                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
+                                    viberName = {"viberName1"}
+                                />
+                            </div>
+
+                            <div className="vibers" id="viber2">
+                                <Viber
+                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
+                                    viberName = {"viberName"}
+                                />
+                            </div>
+                            <div className="vibers" id="viber3">
+                                <Viber
+                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
+                                    viberName = {"viberName"}
+                                />
+                            </div>
+                            <div className="vibers" id="viber4">
+                                <Viber
+                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
+                                    viberName = {"viberName"}
+                                />
+                            </div>
+                            <div className="vibers" id="viber5">
+                                <Viber
+                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
+                                    viberName = {"viberName"}
+                                />
+                            </div>
+                            <div className="vibers" id="viber6">
+                                <Viber
+                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
+                                    viberName = {"viberName"}
+                                />
+                            </div>
+                            <div className="vibers" id="viber7">
+                                <Viber
+                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
+                                    viberName = {"viberName"}
+                                />
+                            </div>
+                            <div className="vibers" id="viber8">
+                                <Viber
+                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
+                                    viberName = {"viberName"}
+                                />
+                            </div>
+                            <div className="vibers" id="viber9">
+                                <Viber
+                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
+                                    viberName = {"viberName"}
+                                />
+                            </div>
+                            <div className="vibers" id="viber10">
+                                <Viber
+                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
+                                    viberName = {"viberName"}
+                                />
+                            </div>
+
+                            <div className="vibers" id="user">
+                                <Viber
+                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
+                                    viberName = {"userName"}
+                                />
+                            </div>
+
                         </Col>
                     </Row>
                 </div>
+
               <Particles
                   params={{
                       particles: {
@@ -192,11 +250,13 @@ class Home extends Component {
                       backgroundImage: `url(${"http://thestrategicfellow.com/wp-content/uploads/2018/07/galaxy.jpg"})`
                   }}
               />
+
           </Col>
 
         </Row>
 
       </Container>
+        </div>
 
     );
   }

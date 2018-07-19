@@ -1,7 +1,16 @@
 import axios from "axios";
 //import filterParams from "./filterParams";
 
+
 export default {
+
+    getUsers: function() {
+        return axios.get("/api/users");
+    },
+    saveNewUser: function(_id, username, email, pw) {
+        console.log(_id, username, email, pw);
+        return axios.post("/api/users", { params: _id, username, email, pw });
+    },
     getMusic: function(search) {
         console.log(search);
         return axios.get("https://itunes.apple.com/search?term=" + search);

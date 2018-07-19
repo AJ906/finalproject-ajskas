@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 //import { List, ListItem } from "../../components/List";
 //import { Input, TextArea, FormBtn } from "../../components/Form";
-import { Galaxy } from "../../components/Galaxy";
+import { Galaxy } from "../../components/Viber";
 import Particles from 'react-particles-js';
 import "./Profile.css";
 import ProView from "../../components/ProView/ProView";
+
 
 class Profile extends Component {
 
