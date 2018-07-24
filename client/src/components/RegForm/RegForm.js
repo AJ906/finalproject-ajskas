@@ -18,16 +18,16 @@ const RegForm = props => (
                     <div className="modal-body">
                         <form>
                             <div className="form-group">
-                                <label htmlFor="username">
+                                <label htmlFor="userName">
                                     <strong>Username</strong>
                                 </label>
                                 <input
                                     className="form-control"
                                     id="username"
                                     type="text"
-                                    value={props.username}
+                                    value={props.userName}
                                     placeholder="create username"
-                                    name="username"
+                                    name="userName"
                                     onChange={props.handleInputChange}
                                     required
                                 />
@@ -70,16 +70,16 @@ const RegForm = props => (
                                     onChange={props.handleInputChange}
                                     required
                                 />
-                                <label htmlFor="photoURL">
+                                <label htmlFor="proPic">
                                     <strong>Link Profile Photo (optional)</strong>
                                 </label>
                                 <input
                                     className="form-control"
                                     id="photoURL"
                                     type="text"
-                                    value={props.photoURL}
+                                    value={props.proPic}
                                     placeholder="enter photo web address"
-                                    name="photoURL"
+                                    name="proPic"
                                     onChange={props.handleInputChange}
                                 />
                                 <label htmlFor="instagram">
@@ -108,11 +108,11 @@ const RegForm = props => (
                                 />
 
                             </div>
-                            <div className="pull-right">
+                            <div className="pull-right" data-dismiss="modal">
                                 <button
                                     onClick={props.handleFormSubmit}
                                     type="submit"
-                                    className="btn btn-lg btn-danger"
+                                    className="btn btn-lg btn-dark"
                                 >
                                     Login
                                 </button>
