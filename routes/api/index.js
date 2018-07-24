@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 const friendRoutes = require("./friends");
+const loggedInRoutes = require("./loggedIn");
 const songLikeRoutes = require("./songLikes");
 const playlistLikeRoutes = require("./playlistLikes");
 const playlistRoutes = require("./playlists");
@@ -9,6 +10,8 @@ const userRoutes = require("./users");
 
 // User routes
 router.use("/users", userRoutes);
+
+router.use("/loggedIn", loggedInRoutes);
 
 // Profile routes
 router.use("/profiles", profileRoutes);

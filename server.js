@@ -6,6 +6,10 @@ const app = express();
 const proxy = require("http-proxy-middleware");
 const PORT = process.env.PORT || 3002;
 
+
+global.globalString = "This can be accessed anywhere!";
+console.log(globalString);
+
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

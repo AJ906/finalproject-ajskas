@@ -17,9 +17,6 @@ const SearchCard = ({ artwork, dtid, playback, trackName, artistName, _id, track
        alt=""
     />
 
-          <button onClick={() => handleClick(_id)} className="btn btn-primary">
-              {buttonText}
-          </button>
 
           <audio id="jambox" controls className="audio" src={playback} />
 

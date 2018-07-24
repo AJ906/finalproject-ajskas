@@ -14,8 +14,6 @@ import Viber from "../../components/Viber/Viber";
 
 
 
-
-
 let loggedInUser = {
     _userName: "",
     _profileId: "",
@@ -63,36 +61,61 @@ class Home extends Component {
 
 
     componentDidMount() {
-        console.log(this.state.userName);
+        this.retrieveUser()
     }
 
   retrieveUser = () => {
 
-        console.log(this.state.userName);
-        // const id = this.state.userName;
-        // const pass = this.state.pw;
-        // API.getUser(id)
-        //     .then(res =>
-        //         this.validateUser(id, pass, res)
-        //     )
-        //     .catch(err =>
-        //         console.log(err)
-        //     );
+
+
+        API.getLoggedIn()
+            .then(res =>
+                this.populateUser(res)
+                // console.log(res)
+            )
+            .catch(err =>
+                console.log(err)
+            );
     };
+
+    populateUser = (res) => {
+        const id = res.data[res.data.length-1].lastUser
+        API.getUser(id)
+            .then(res =>
+                console.log(res)
+            )
+            .catch(err =>
+                console.log(err)
+            );
+        this.setState({ _id: res.data._id, userName: res.data.userName, email: res.data.email, pw: res.data.pw,
+            instagram: res.data.instagram, twitter: res.data.twitter, proPic:res.data.proPic,
+            profile_id: res.data.profile_id, friendsList_id: res.data.friendsList_id, playlist_id: res.data.playlist_id});
+        loggedInUser._userName = this.state.userName;
+        loggedInUser._email = this.state.email;
+        loggedInUser._photo = this.state.proPic;
+        loggedInUser._twitter = this.state.twitter;
+        loggedInUser._instagram = this.state.instagram;
+        loggedInUser._pw = this.state.pw;
+        loggedInUser._profileId = this.state.profile_id;
+        loggedInUser._friendsListId = this.state.friendsList_id;
+        loggedInUser._playlistId = this.state.playlist_id;
+    }
 
 
 
 
     render() {
+        setTimeout(this.normalRender, 80000);
     return (
-        this.retrieveUser(),
+
 
         <div id="vibeCatcher">
-      <Container>
+      <Container className="pull-right">
         <Row>
           <Col size="md-12">
               <h2 id="vcHeader"> Vibe Catcher </h2>
-                <div id="constellation">
+                <div id="constellation" className="pull-right">
+
                     <Row>
                         <Col size="md-12">
                             <div className="vibers" id="viber1">
@@ -160,7 +183,7 @@ class Home extends Component {
                             <div className="vibers" id="user">
                                 <Viber
                                     profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"userName"}
+                                    viberName = {"viberName"}
                                 />
                             </div>
 

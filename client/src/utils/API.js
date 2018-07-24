@@ -45,6 +45,24 @@ export default {
     },
 
 
+    getLoggedIn: function() {
+        return axios.get("/api/loggedIn");
+    },
+    // // Gets the profile with the given id
+    // getLoggedIn: function(id) {
+    //     return axios.get("/api/profiles/" + id);
+    // },
+    // Deletes the profile with the given id
+    deleteLoggedIn: function(id) {
+        return axios.delete("/api/loggedIn/" + id);
+    },
+
+    saveNewLogin: function(loginData) {
+        console.log(loginData);
+        return axios.post("/api/loggedIn/", loginData);
+    },
+
+
     // Gets all playlists
     getPlaylists: function() {
         return axios.get("/api/constellations");

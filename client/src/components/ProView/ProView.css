@@ -1,10 +1,10 @@
 .proPic {
-    height: 250px;
-    weight: 250px;
+    width: 500px;
 }
 
 #proView {
     padding: 30px 30px 30px 30px;
+    color: white;
 }
 
 #user411 {

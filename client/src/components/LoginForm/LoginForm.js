@@ -37,7 +37,7 @@ const LoginForm = props => (
                     <button
                         onClick={props.handleFormSubmit}
                         type="submit"
-                        className="btn btn-lg btn-primary"
+                        className="btn btn-lg btn-dark"
 
                     >
                        Login

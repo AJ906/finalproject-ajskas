@@ -4,5 +4,6 @@ module.exports = {
     Playlist: require("./Playlist"),
     SongLike: require("./SongLike"),
     PlaylistLike: require("./PlaylistLike"),
-    Profile: require("./Profile")
+    Profile: require("./Profile"),
+    LoggedIn: require("./LoggedIn")
 };

@@ -10,6 +10,8 @@ import { List } from "../../components/List";
 import LoginForm from "../../components/LoginForm";
 import RegForm from "../../components/RegForm";
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
+import "./Login.css";
+
 
 let loggedInUser = {
     _userName: "",
@@ -36,6 +38,8 @@ let borderPatrol = {
 
 class Login extends Component {
 
+
+
     state = {
         user: "",
         profile:"",
@@ -57,7 +61,9 @@ class Login extends Component {
         likedSongs: "",
         likedSongs_id: "",
         likedPlaylists: "",
-        likedPlaylists_id: ""
+        likedPlaylists_id: "",
+        lastUser: "",
+        loggedIn_id: ""
 
     };
 
@@ -115,7 +121,11 @@ class Login extends Component {
                 loggedInUser._playlistId = this.state.playlist_id;
 
                 console.log(loggedInUser);
-                console.log("logged in as" + loggedInUser._userName);
+                console.log("logged in as " + loggedInUser._userName);
+                console.log(this.props.history);
+                window.userName=loggedInUser._userName;
+
+                this.logUser()
                 this.setState({redirect: true});
             } else  {
                 console.log("user invalid");
@@ -125,6 +135,19 @@ class Login extends Component {
             console.log("user invalid");
         }
     };
+
+    logUser = () => {
+        API.saveNewLogin({
+            lastUser: this.state.userName,
+            lastLogged_id: this.state.lastLogged_id
+        })
+            .then(res => {
+
+                console.log(res);
+
+            })
+            .catch(err => console.log(err));
+    }
 
     regSubmit = event => {
 
@@ -318,6 +341,8 @@ class Login extends Component {
                 console.log("user friendsList_id updated")
             )
             .catch(err => console.log(err));
+        window.userName=loggedInUser._userName;
+        this.props.history.match.params.push({username:loggedInUser._userName})
         this.setState({redirect: true});
     };
 
@@ -425,18 +450,32 @@ class Login extends Component {
 
     render() {
         if (this.state.redirect) {
-            return <Redirect push to="/Home" />;
+
+            return <Redirect push to="/Home"  params={{userName:this.state.userName}} />;
+            {/*<Redirect*/}
+            {/*push to={{*/}
+                {/*pathname: "/Home",*/}
+                {/*search: this.state.userName*/}
+            {/*}}*/}
+            {/*/>*/}
         }
+
         return (
+
             <Container>
                 <Row>
                     <Col size="md-12">
                         <Jumbotron>
-                            <h1 className="text-center">
-                                <strong>Welcome to Vibe'n</strong>
+                            <h1 className="pull-left">
+                                <strong>Welcome to Vibin'</strong>
                             </h1>
                             <h2 className="text-center">
-                                All Things Music
+                                <h6>
+                                    <h5 className="left-align">Vibin' (defined by the Urban Dictionary)</h5>
+                                    1. hanging, doing nothing, chilling
+                                    2. listening to music.
+                                    we just vibin in the basement.
+                                </h6>
                             </h2>
                         </Jumbotron>
                     </Col>
@@ -471,3 +510,4 @@ class Login extends Component {
 }
 
 export default Login;
+
