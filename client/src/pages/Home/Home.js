@@ -12,51 +12,81 @@ import ProView from "../../components/ProView/ProView";
 import Particles from 'react-particles-js';
 import Viber from "../../components/Viber/Viber";
 
+
+
+
+
+let loggedInUser = {
+    _userName: "",
+    _profileId: "",
+    _email: "",
+    _photo: "",
+    _pw: "",
+    _twitter: "",
+    _instagram: "",
+    _about: "",
+    _playlistId: "",
+    _playlist: "",
+    _friendsListId: "",
+    _friendsList: "",
+    _likedSongs: "",
+    _likedSongsId: "",
+    _likedPlaylists: "",
+    _likedPlaylistsId: ""
+};
+
+
 class Home extends Component {
   state = {
-    articles: [],
-    q: "",
-    start_year: "",
-    end_year: "",
-    message: "Search For Articles To Begin!"
+      user: "",
+      profile:"",
+      _id:"",
+      userName: "",
+      pw: "",
+      email: "",
+      pw2compare: "",
+      proPic: "",
+      instagram: "",
+      twitter: "",
+      about: "",
+      photoURL: "",
+      profile_id: "",
+      playlist_id: "",
+      playlist: "",
+      friendList: "",
+      friendsList_id: "",
+      likedSongs: "",
+      likedSongs_id: "",
+      likedPlaylists: "",
+      likedPlaylists_id: ""
   };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
 
-  getArticles = () => {
-    API.getArticles({
-      q: this.state.q,
-      start_year: this.state.start_year,
-      end_year: this.state.end_year
-    })
-      .then(res =>
-        this.setState({
-          articles: res.data,
-          message: !res.data.length
-            ? "No New Articles Found, Try a Different Query"
-            : ""
-        })
-      )
-      .catch(err => console.log(err));
-  };
+    componentDidMount() {
+        console.log(this.state.userName);
+    }
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.getArticles();
-  };
+  retrieveUser = () => {
 
-  handleArticleSave = id => {
-    const article = this.state.articles.find(article => article._id === id);
-    API.saveArticle(article).then(res => this.getArticles());
-  };
+        console.log(this.state.userName);
+        // const id = this.state.userName;
+        // const pass = this.state.pw;
+        // API.getUser(id)
+        //     .then(res =>
+        //         this.validateUser(id, pass, res)
+        //     )
+        //     .catch(err =>
+        //         console.log(err)
+        //     );
+    };
 
-  render() {
+
+
+
+    render() {
     return (
+        this.retrieveUser(),
+
         <div id="vibeCatcher">
       <Container>
         <Row>

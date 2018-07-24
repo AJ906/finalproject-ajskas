@@ -10,8 +10,11 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findById: function(req, res) {
+        console.log("userController findById");
+        console.log(req.params.id);
         db.User
-            .findById(req.params.id)
+            // .findById(req.params.id)
+            .findById({ _id: req.params.id })
             .then(dbUser => res.json(dbUser))
             .catch(err => res.status(422).json(err));
     },

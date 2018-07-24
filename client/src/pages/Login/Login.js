@@ -9,6 +9,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List } from "../../components/List";
 import LoginForm from "../../components/LoginForm";
 import RegForm from "../../components/RegForm";
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
 let loggedInUser = {
     _userName: "",
@@ -28,6 +29,10 @@ let loggedInUser = {
     _likedPlaylists: "",
     _likedPlaylistsId: ""
 };
+
+let borderPatrol = {
+    bpResId: "",
+}
 
 class Login extends Component {
 
@@ -53,6 +58,7 @@ class Login extends Component {
         likedSongs_id: "",
         likedPlaylists: "",
         likedPlaylists_id: ""
+
     };
 
     handleInputChange = event => {
@@ -64,9 +70,60 @@ class Login extends Component {
 
     loginSubmit = event => {
         event.preventDefault();
-        console.log(this.state.email);
+        console.log(this.state.userName);
         console.log(this.state.pw);
 
+        this.checkUser();
+
+    };
+
+
+    checkUser = () => {
+
+        console.log(this.state.userName);
+        const id = this.state.userName;
+        const pass = this.state.pw;
+        API.getUser(id)
+            .then(res =>
+                this.validateUser(id, pass, res)
+            )
+            .catch(err =>
+                console.log(err)
+            );
+    };
+
+    validateUser = (id, pass, res) => {
+        console.log(res);
+        console.log(id);
+        console.log(pass);
+        console.log(res.data);
+        if (res.data !== null) {
+
+            if (res.data._id === id && res.data.pw === pass) {
+                this.setState({ _id: res.data._id, userName: res.data.userName, email: res.data.email, pw: res.data.pw,
+                    instagram: res.data.instagram, twitter: res.data.twitter, proPic:res.data.proPic,
+                    profile_id: res.data.profile_id, friendsList_id: res.data.friendsList_id, playlist_id: res.data.playlist_id});
+                console.log("user valid");
+                loggedInUser._userName = this.state.userName;
+                loggedInUser._email = this.state.email;
+                loggedInUser._photo = this.state.proPic;
+                loggedInUser._twitter = this.state.twitter;
+                loggedInUser._instagram = this.state.instagram;
+                loggedInUser._pw = this.state.pw;
+                loggedInUser._profileId = this.state.profile_id;
+                loggedInUser._friendsListId = this.state.friendsList_id;
+                loggedInUser._playlistId = this.state.playlist_id;
+
+                console.log(loggedInUser);
+                console.log("logged in as" + loggedInUser._userName);
+                this.setState({redirect: true});
+            } else  {
+                console.log("user invalid");
+            }
+
+        } else {
+            console.log("user invalid");
+        }
     };
 
     regSubmit = event => {
@@ -239,7 +296,7 @@ class Login extends Component {
                 this.setState({ friendsList:res.data.friendsList, friendsList_id: ""})
             )
             .catch(err => console.log(err));
-        this.saveSongLikesList();
+        // this.saveSongLikesList();
     };
 
 
@@ -261,115 +318,115 @@ class Login extends Component {
                 console.log("user friendsList_id updated")
             )
             .catch(err => console.log(err));
+        this.setState({redirect: true});
     };
 
 
+    // saveSongLikesList = () => {
+    //
+    //     const likedSongs = [];
+    //
+    //     API.saveToLikedSongs({
+    //         likedSongs: likedSongs,
+    //         likedSongs_id: this.state.likedSongs_id
+    //     })
+    //         .then(res => {
+    //             this.loadSongLikesList();
+    //             loggedInUser._likedSongsId = res.data._id;
+    //             this.addSongLikes_ID();
+    //             loggedInUser._likedSongs = res.data.likedSongs;
+    //             console.log(res);
+    //             console.log(loggedInUser);
+    //         })
+    //         .catch(err => console.log(err));
+    // };
+    //
+    // loadSongLikesList = () => {
+    //     API.getLikedSongsList()
+    //         .then(res =>
+    //             this.setState({ likedSongs:res.data.likedSongs, likedSongs_id: ""})
+    //         )
+    //         .catch(err => console.log(err));
+    //     this.savePlaylistLikesList();
+    // };
+    //
+    //
+    // addSongLikes_ID = () => {
+    //     API.updateUser({
+    //         email: loggedInUser._email,
+    //         friendsList_id: loggedInUser._friendsListId,
+    //         instagram: loggedInUser._instagram,
+    //         likedSongs_id: loggedInUser._likedSongsId,
+    //         playlist_id: loggedInUser._playlistId,
+    //         profile_id: loggedInUser._profileId,
+    //         proPic: loggedInUser._photo,
+    //         pw: loggedInUser._pw,
+    //         twitter: loggedInUser._twitter,
+    //         userName: loggedInUser._userName,
+    //         _id: loggedInUser._userName
+    //     })
+    //         .then(res =>
+    //                 console.log(res),
+    //             console.log("user likedSongs_id updated")
+    //         )
+    //         .catch(err => console.log(err));
+    // };
 
 
-    saveSongLikesList = () => {
-
-        const likedSongs = [];
-
-        API.saveToLikedSongs({
-            likedSongs: likedSongs,
-            likedSongs_id: this.state.likedSongs_id
-        })
-            .then(res => {
-                this.loadSongLikesList();
-                loggedInUser._likedSongsId = res.data._id;
-                this.addSongLikes_ID();
-                loggedInUser._likedSongs = res.data.likedSongs;
-                console.log(res);
-                console.log(loggedInUser);
-            })
-            .catch(err => console.log(err));
-    };
-
-    loadSongLikesList = () => {
-        API.getLikedSongsList()
-            .then(res =>
-                this.setState({ likedSongs:res.data.likedSongs, likedSongs_id: ""})
-            )
-            .catch(err => console.log(err));
-        this.savePlaylistLikesList();
-    };
-
-
-    addSongLikes_ID = () => {
-        API.updateUser({
-            email: loggedInUser._email,
-            friendsList_id: loggedInUser._friendsListId,
-            instagram: loggedInUser._instagram,
-            likedSongs_id: loggedInUser._likedSongsId,
-            playlist_id: loggedInUser._playlistId,
-            profile_id: loggedInUser._profileId,
-            proPic: loggedInUser._photo,
-            pw: loggedInUser._pw,
-            twitter: loggedInUser._twitter,
-            userName: loggedInUser._userName,
-            _id: loggedInUser._userName
-        })
-            .then(res =>
-                    console.log(res),
-                console.log("user likedSongs_id updated")
-            )
-            .catch(err => console.log(err));
-    };
-
-
-
-
-    savePlaylistLikesList = () => {
-
-        const likedPlaylists = [];
-
-        API.saveToLikedConstellations({
-            likedPlaylists: likedPlaylists,
-            likedPlaylists_id: this.state.likedPlaylists_id
-        })
-            .then(res => {
-                this.loadPlaylistLikesList();
-                loggedInUser._likedPlaylistsId = res.data._id;
-                this.addPlaylistLikes_ID();
-                loggedInUser._likedPlaylists = res.data.likedPlaylists;
-                console.log(res);
-                console.log(loggedInUser);
-            })
-            .catch(err => console.log(err));
-    };
-
-    loadPlaylistLikesList = () => {
-        API.getLikedConstellations()
-            .then(res =>
-                this.setState({ likedPlaylists:res.data.likedPlaylists, likedPlaylists_id: ""})
-            )
-            .catch(err => console.log(err));
-    };
-
-
-    addPlaylistLikes_ID = () => {
-        API.updateUser({
-            email: loggedInUser._email,
-            friendsList_id: loggedInUser._friendsListId,
-            instagram: loggedInUser._instagram,
-            likedPlaylists_id: loggedInUser._likedPlaylistsId,
-            likedSongs_id: loggedInUser._likedSongsId,
-            playlist_id: loggedInUser._playlistId,
-            profile_id: loggedInUser._profileId,
-            proPic: loggedInUser._photo,
-            pw: loggedInUser._pw,
-            twitter: loggedInUser._twitter,
-            userName: loggedInUser._userName,
-            _id: loggedInUser._userName
-        })
-            .then(res =>
-                    console.log(res),
-                console.log("user likedPlaylists_id updated")
-            )
-            .catch(err => console.log(err));
-    };
+    // savePlaylistLikesList = () => {
+    //
+    //     const likedPlaylists = [];
+    //
+    //     API.saveToLikedConstellations({
+    //         likedPlaylists: likedPlaylists,
+    //         likedPlaylists_id: this.state.likedPlaylists_id
+    //     })
+    //         .then(res => {
+    //             this.loadPlaylistLikesList();
+    //             loggedInUser._likedPlaylistsId = res.data._id;
+    //             this.addPlaylistLikes_ID();
+    //             loggedInUser._likedPlaylists = res.data.likedPlaylists;
+    //             console.log(res);
+    //             console.log(loggedInUser);
+    //         })
+    //         .catch(err => console.log(err));
+    // };
+    //
+    // loadPlaylistLikesList = () => {
+    //     API.getLikedConstellations()
+    //         .then(res =>
+    //             this.setState({ likedPlaylists:res.data.likedPlaylists, likedPlaylists_id: ""})
+    //         )
+    //         .catch(err => console.log(err));
+    // };
+    //
+    //
+    // addPlaylistLikes_ID = () => {
+    //     API.updateUser({
+    //         email: loggedInUser._email,
+    //         friendsList_id: loggedInUser._friendsListId,
+    //         instagram: loggedInUser._instagram,
+    //         likedPlaylists_id: loggedInUser._likedPlaylistsId,
+    //         likedSongs_id: loggedInUser._likedSongsId,
+    //         playlist_id: loggedInUser._playlistId,
+    //         profile_id: loggedInUser._profileId,
+    //         proPic: loggedInUser._photo,
+    //         pw: loggedInUser._pw,
+    //         twitter: loggedInUser._twitter,
+    //         userName: loggedInUser._userName,
+    //         _id: loggedInUser._userName
+    //     })
+    //         .then(res =>
+    //                 console.log(res),
+    //             console.log("user likedPlaylists_id updated")
+    //         )
+    //         .catch(err => console.log(err));
+    // };
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect push to="/Home" />;
+        }
         return (
             <Container>
                 <Row>
@@ -388,7 +445,7 @@ class Login extends Component {
                             <LoginForm
                                 handleInputChange={this.handleInputChange}
                                 handleFormSubmit={this.loginSubmit}
-                                email={this.state.email}
+                                userName={this.state.userName}
                                 pw={this.state.pw}
                             />
 

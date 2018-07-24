@@ -1,19 +1,19 @@
 import React from "react";
-
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
 const LoginForm = props => (
     <form>
         <div className="form-group">
-            <label htmlFor="topic">
-                <strong>Email</strong>
+            <label htmlFor="userName">
+                <strong>Username</strong>
             </label>
             <input
                 className="form-control"
-                id="email"
+                id="userName"
                 type="text"
-                value={props.email}
-                placeholder="enter email address"
-                name="email"
+                value={props.userName}
+                placeholder="enter username"
+                name="userName"
                 onChange={props.handleInputChange}
                 required
             />
@@ -23,7 +23,7 @@ const LoginForm = props => (
             <input
                 className="form-control"
                 id="pw"
-                type="number"
+                type="text"
                 value={props.pw}
                 placeholder="enter password"
                 name="pw"
@@ -32,13 +32,21 @@ const LoginForm = props => (
             />
         </div>
         <div className="pull-right">
-            <button
-                onClick={props.handleFormSubmit}
-                type="submit"
-                className="btn btn-lg btn-danger"
-            >
-                Login
-            </button>
+
+
+                    <button
+                        onClick={props.handleFormSubmit}
+                        type="submit"
+                        className="btn btn-lg btn-primary"
+
+                    >
+                       Login
+                    </button>
+
+
+
+
+
         </div>
     </form>
 );
