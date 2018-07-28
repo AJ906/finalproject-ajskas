@@ -1,28 +1,32 @@
 const router = require("express").Router();
 
 const friendRoutes = require("./friends");
-const likeRoutes = require("./likes");
+const loggedInRoutes = require("./loggedIn");
+const songLikeRoutes = require("./songLikes");
+const playlistLikeRoutes = require("./playlistLikes");
 const playlistRoutes = require("./playlists");
 const profileRoutes = require("./profiles");
-const songRoutes = require("./songs");
 const userRoutes = require("./users");
 
 // User routes
-//router.use("/users", userRoutes)
+router.use("/users", userRoutes);
+
+router.use("/loggedIn", loggedInRoutes);
 
 // Profile routes
-//router.use("/profiles", profileRoutes)
+router.use("/profiles", profileRoutes);
 
 // Friend routes
-//router.use("/friends", friendRoutes)
+router.use("/friends", friendRoutes);
 
 // Playlist routes
-//router.use("/playlists", playlistRoutes)
+router.use("/constellations", playlistRoutes);
 
-// Song routes
-//router.use("/songs", songRoutes)
+// Liked songs routes
+router.use("/likedSongs", songLikeRoutes);
 
-// Like routes
-//router.use("/likes", likeRoutes)
+
+// Liked playlists routes
+router.use("/likedConstellations", playlistLikeRoutes);
 
 module.exports = router;

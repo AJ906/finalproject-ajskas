@@ -1,0 +1,76 @@
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed');
+
+
+#headx {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+#tcHeader {
+    position: fixed;
+    color: #ffffff;
+    /*background-color: rgba(133, 136, 152, 0.85);*/
+    padding: 10px 10px 10px 10px;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 18px;
+    margin: 0 0 0 234px;
+}
+
+
+.tracks{
+    background-color: rgba(133, 136, 152, 0.85);
+    padding: 10px 10px 10px 10px;
+    border-radius: 25px;
+
+}
+
+#profileData {
+    padding: 20px 20px 20px 20px;
+}
+
+#constellation {
+    position: absolute;
+    color: #ffffff;
+
+    padding: 15px 15px 15px 15px;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 18px;
+    width:80vh;
+    margin: 50px 200px 0 35px;
+    border-radius: 25px;
+}
+
+/*#track1{*/
+    /*position:fixed;*/
+/*}*/
+/*#track2{*/
+    /*position:fixed;*/
+/*}*/
+/*#track3{*/
+    /*position:fixed;*/
+/*}*/
+/*#track4{*/
+    /*position:fixed;*/
+/*}*/
+/*#track5{*/
+    /*position:fixed;*/
+/*}*/
+/*#track6{*/
+    /*position:fixed;*/
+/*}*/
+/*#track7{*/
+    /*position:fixed;*/
+/*}*/
+/*#track8{*/
+    /*position:fixed;*/
+/*}*/
+/*#track9{*/
+    /*position:fixed;*/
+/*}*/
+/*#track10{*/
+    /*position:fixed;*/
+/*}*/

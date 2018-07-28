@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const friendlistSchema = new Schema({
-    friendlist_id: { type: Schema.Types.ObjectId, required: true },
-    friendlist: [{profile_id:String}]
+const friendsListSchema = new Schema({
+    friendsList: [{_id:String}],
+    friendsList_id: { type: String}
+});
 
-}, { _id: false });
+const Friend = mongoose.model("Friend", friendsListSchema);
 
-const FriendList = mongoose.model("FriendList", friendlistSchema);
-
-module.exports = FriendList;
+module.exports = Friend;

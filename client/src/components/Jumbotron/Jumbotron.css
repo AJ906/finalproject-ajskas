@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+
 .jumbotron h1 {
   font-size: 32px;
+  font-family: 'Ubuntu Condensed', sans-serif;
+
 }
 
 .jumbotron h2 {
   font-size: 26px;
+  font-family: 'Ubuntu Condensed', sans-serif;
+
+}
+
+.jumbotron {
+  margin: 30px  0 0 0;
+
 }

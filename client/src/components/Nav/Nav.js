@@ -4,7 +4,7 @@ import "./Nav.css";
 
 const Nav = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <Link className="navbar-brand" to="/">
+    <Link className="navbar-brand" to="/Home">
       Vibin'
     </Link>
     <button
@@ -21,9 +21,6 @@ const Nav = () => (
       <ul className="navbar-nav">
         <li className="nav-item">
           <Link className="nav-link" to="/Search">Music Search</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/saved">Music News</Link>
         </li>
       </ul>
     </div>

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+
+.proPic {
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+
+}
+.proPic {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+
+}
+
+.un {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 3vh;
+    display:inline-block;
+    color: white;
+}
+
+#viber {
+    height:9vh;
+
+}

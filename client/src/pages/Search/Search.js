@@ -28,7 +28,7 @@ class Search extends Component {
     state = {
         searchValue: "",
         searchResults: [],
-        candleLights: []
+        stars: []
     };
 
     searchMusic = (musicSearch) => {
@@ -75,7 +75,7 @@ class Search extends Component {
 
     };
 
-    handleCandleLight = id => {
+    handleStar = id => {
         const track = this.state.searchResults.find(track => track._id === id);
         API.saveTrack(track)
             .then(res => {
@@ -85,9 +85,9 @@ class Search extends Component {
                     throw new Error(res.data.message);
 
                 }
-                this.setState({ candleLights: res.data});
+                this.setState({ stars: res.data});
                 console.log(res);
-                console.log(this.state.candleLights);
+                console.log(this.state.stars);
 
             })
             .catch(err => {
@@ -110,18 +110,18 @@ class Search extends Component {
                     {this.state.searchResults.resultCount ? (
                         <Row>
                             <Col size="md-12">
-                                <List key={this.state.searchResults.trackId}>
+                                <List>
                                     {this.state.searchResults.results.map(result => (
                                         <SearchCard
                                             artwork={result.artworkUrl100}
                                             dtid={result.trackId}
                                             artistName={result.artistName}
                                             trackName={result.trackName}
-                                            playBack={result.previewUrl}
+                                            playback={result.previewUrl}
                                             _id={result.trackId}
                                             trackUrl={result.trackViewUrl}
-                                            buttonText={"Light a Candle"}
-                                            handleClick={this.handleCandleLight}
+                                            buttonText={"Star"}
+                                            handleClick={this.handleStar}
                                         />
                                     ))}
                                 </List>

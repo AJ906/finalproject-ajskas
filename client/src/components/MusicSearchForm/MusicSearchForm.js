@@ -22,7 +22,7 @@ const MusicSearchForm = props => (
             <button
                 onClick={props.handleFormSubmit}
                 type="submit"
-                className="btn btn-lg btn-danger"
+                className="btn btn-lg btn-dark"
             >
                 Search
             </button>
