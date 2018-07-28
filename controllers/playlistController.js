@@ -27,6 +27,10 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     update: function(req, res) {
+        const playlist = {
+            playlist: req.body.playlist,
+            playlist_id: req.body.playlist_id
+        };
         db.Playlist
             .findOneAndUpdate({ _id: req.params.id }, req.body)
             .then(dbPlaylist => res.json(dbPlaylist))

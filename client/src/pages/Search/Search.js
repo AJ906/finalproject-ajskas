@@ -120,6 +120,7 @@ class Search extends Component {
                                             playback={result.previewUrl}
                                             _id={result.trackId}
                                             trackUrl={result.trackViewUrl}
+                                            buttonText={"Star"}
                                             handleClick={this.handleStar}
                                         />
                                     ))}

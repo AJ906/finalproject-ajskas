@@ -8,7 +8,7 @@ const Viber = props => (
 
 
     <div id="viber">
-        <a href="#">
+        <a href="/profile">
         <img className="proPic"
              src={props.profilePic}
              alt=""

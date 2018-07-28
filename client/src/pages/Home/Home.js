@@ -33,6 +33,30 @@ let loggedInUser = {
     _likedPlaylistsId: ""
 };
 
+let vibersNames = {
+    v0:"",
+    v1:"",
+    v2:"",
+    v3:"",
+    v4:"",
+    v5:"",
+    v6:"",
+    v7:"",
+    v8:"",
+    v9:""
+};
+let vibersPics = {
+    v0:"",
+    v1:"",
+    v2:"",
+    v3:"",
+    v4:"",
+    v5:"",
+    v6:"",
+    v7:"",
+    v8:"",
+    v9:""
+};
 
 class Home extends Component {
   state = {
@@ -56,7 +80,27 @@ class Home extends Component {
       likedSongs: "",
       likedSongs_id: "",
       likedPlaylists: "",
-      likedPlaylists_id: ""
+      likedPlaylists_id: "",
+      v0:"",
+      v1:"",
+      v2:"",
+      v3:"",
+      v4:"",
+      v5:"",
+      v6:"",
+      v7:"",
+      v8:"",
+      v9:"",
+      v00:"",
+      v11:"",
+      v22:"",
+      v33:"",
+      v44:"",
+      v55:"",
+      v66:"",
+      v77:"",
+      v88:"",
+      v99:"",
   };
 
 
@@ -82,14 +126,14 @@ class Home extends Component {
         const id = res.data[res.data.length-1].lastUser
         API.getUser(id)
             .then(res =>
-                console.log(res)
+                this.setState({ _id: res.data._id, userName: res.data.userName, email: res.data.email, pw: res.data.pw,
+                    instagram: res.data.instagram, twitter: res.data.twitter, proPic:res.data.proPic,
+                    profile_id: res.data.profile_id, friendsList_id: res.data.friendsList_id, playlist_id: res.data.playlist_id})
             )
             .catch(err =>
                 console.log(err)
             );
-        this.setState({ _id: res.data._id, userName: res.data.userName, email: res.data.email, pw: res.data.pw,
-            instagram: res.data.instagram, twitter: res.data.twitter, proPic:res.data.proPic,
-            profile_id: res.data.profile_id, friendsList_id: res.data.friendsList_id, playlist_id: res.data.playlist_id});
+
         loggedInUser._userName = this.state.userName;
         loggedInUser._email = this.state.email;
         loggedInUser._photo = this.state.proPic;
@@ -99,7 +143,52 @@ class Home extends Component {
         loggedInUser._profileId = this.state.profile_id;
         loggedInUser._friendsListId = this.state.friendsList_id;
         loggedInUser._playlistId = this.state.playlist_id;
-    }
+        this.populateVibers()
+
+    };
+
+    populateVibers = () => {
+
+        API.getUsers()
+            .then(res =>
+                this.setState({ v0: res.data[0].userName, v1: res.data[1].userName, v2: res.data[2].userName,
+                    v00: res.data[0].proPic, v11: res.data[1].proPic, v22: res.data[2].proPic})
+            )
+            .catch(err =>
+                console.log(err)
+            );
+
+        // loggedInUser._userName = this.state.userName;
+        // loggedInUser._email = this.state.email;
+        // loggedInUser._photo = this.state.proPic;
+        // loggedInUser._twitter = this.state.twitter;
+        // loggedInUser._instagram = this.state.instagram;
+        // loggedInUser._pw = this.state.pw;
+        // loggedInUser._profileId = this.state.profile_id;
+        // loggedInUser._friendsListId = this.state.friendsList_id;
+        // loggedInUser._playlistId = this.state.playlist_id;
+
+
+    };
+
+    // loadVibers = (res) => {
+    //
+    //     // for (var i = 0; i < res.data.length; i++) {
+    //     //     vibersNames.push(res.data[i].userName);
+    //     //     vibersPics.push(res.data[i].proPic);
+    //     // }
+    //     vibersNames.v0 = res.data[0].userName;
+    //     vibersPics.v0 = res.data[0].proPic;
+    //     vibersNames.v1 = res.data[1].userName;
+    //     vibersPics.v1 = res.data[1].proPic;
+    //     vibersNames.v2 = res.data[2].userName;
+    //     vibersPics.v2 = res.data[2].proPic;
+    //     vibersNames.v3 = res.data[3].userName;
+    //     vibersPics.v3 = res.data[3].proPic;
+    //
+    //
+    // };
+
 
 
 
@@ -120,70 +209,70 @@ class Home extends Component {
                         <Col size="md-12">
                             <div className="vibers" id="viber1">
                                 <Viber
-                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"viberName1"}
+                                    profilePic = {this.state.v00}
+                                    viberName = {this.state.v0}
                                 />
                             </div>
 
                             <div className="vibers" id="viber2">
                                 <Viber
-                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"viberName"}
+                                    profilePic = {this.state.v22}
+                                    viberName = {this.state.v2}
                                 />
                             </div>
                             <div className="vibers" id="viber3">
                                 <Viber
-                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"viberName"}
+                                    profilePic = {this.state.v11}
+                                    viberName = {this.state.v1}
                                 />
                             </div>
-                            <div className="vibers" id="viber4">
-                                <Viber
-                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"viberName"}
-                                />
-                            </div>
-                            <div className="vibers" id="viber5">
-                                <Viber
-                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"viberName"}
-                                />
-                            </div>
-                            <div className="vibers" id="viber6">
-                                <Viber
-                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"viberName"}
-                                />
-                            </div>
-                            <div className="vibers" id="viber7">
-                                <Viber
-                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"viberName"}
-                                />
-                            </div>
-                            <div className="vibers" id="viber8">
-                                <Viber
-                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"viberName"}
-                                />
-                            </div>
-                            <div className="vibers" id="viber9">
-                                <Viber
-                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"viberName"}
-                                />
-                            </div>
-                            <div className="vibers" id="viber10">
-                                <Viber
-                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"viberName"}
-                                />
-                            </div>
+                            {/*<div className="vibers" id="viber4">*/}
+                                {/*<Viber*/}
+                                    {/*profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}*/}
+                                    {/*viberName = {"viberName"}*/}
+                                {/*/>*/}
+                            {/*</div>*/}
+                            {/*<div className="vibers" id="viber5">*/}
+                                {/*<Viber*/}
+                                    {/*profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}*/}
+                                    {/*viberName = {"viberName"}*/}
+                                {/*/>*/}
+                            {/*</div>*/}
+                            {/*<div className="vibers" id="viber6">*/}
+                                {/*<Viber*/}
+                                    {/*profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}*/}
+                                    {/*viberName = {"viberName"}*/}
+                                {/*/>*/}
+                            {/*</div>*/}
+                            {/*<div className="vibers" id="viber7">*/}
+                                {/*<Viber*/}
+                                    {/*profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}*/}
+                                    {/*viberName = {"viberName"}*/}
+                                {/*/>*/}
+                            {/*</div>*/}
+                            {/*<div className="vibers" id="viber8">*/}
+                                {/*<Viber*/}
+                                    {/*profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}*/}
+                                    {/*viberName = {"viberName"}*/}
+                                {/*/>*/}
+                            {/*</div>*/}
+                            {/*<div className="vibers" id="viber9">*/}
+                                {/*<Viber*/}
+                                    {/*profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}*/}
+                                    {/*viberName = {"viberName"}*/}
+                                {/*/>*/}
+                            {/*</div>*/}
+                            {/*<div className="vibers" id="viber10">*/}
+                                {/*<Viber*/}
+                                    {/*profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}*/}
+                                    {/*viberName = {"viberName"}*/}
+                                {/*/>*/}
+                            {/*</div>*/}
 
                             <div className="vibers" id="user">
                                 <Viber
-                                    profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                                    viberName = {"viberName"}
+                                    profilePic = {this.state.proPic}
+                                    viberName = {this.state.userName}
                                 />
                             </div>
 

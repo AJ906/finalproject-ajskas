@@ -10,12 +10,90 @@ import "./Profile.css";
 import ProView from "../../components/ProView/ProView";
 
 
+
+
+
 class Profile extends Component {
+
+    state = {
+        user: "",
+        profile:"",
+        _id:"",
+        userName: "",
+        pw: "",
+        email: "",
+        pw2compare: "",
+        proPic: "",
+        instagram: "",
+        twitter: "",
+        about: "",
+        photoURL: "",
+        profile_id: "",
+        playlist_id: "",
+        playlist: "",
+        friendList: "",
+        friendsList_id: "",
+        likedSongs: "",
+        likedSongs_id: "",
+        likedPlaylists: "",
+        likedPlaylists_id: "",
+        v0:"",
+        v1:"",
+        v2:"",
+        v3:"",
+        v4:"",
+        v5:"",
+        v6:"",
+        v7:"",
+        v8:"",
+        v9:"",
+        v00:"",
+        v11:"",
+        v22:"",
+        v33:"",
+        v44:"",
+        v55:"",
+        v66:"",
+        v77:"",
+        v88:"",
+        v99:"",
+    };
 
     // componentDidMount() {
     //     $(‘.slider’).slider(); //Initialize slider
     //     $(‘.slider’).slider(‘next’); //Roll slider past initial fadein
     // },
+
+    componentDidMount() {
+        this.retrieveUser()
+    }
+
+    retrieveUser = () => {
+
+        API.getLoggedIn()
+            .then(res =>
+                    this.populateUser(res)
+                // console.log(res)
+            )
+            .catch(err =>
+                console.log(err)
+            );
+    };
+
+    populateUser = (res) => {
+        const id = res.data[res.data.length-1].lastUser
+        API.getUser(id)
+            .then(res =>
+                this.setState({ _id: res.data._id, userName: res.data.userName, email: res.data.email, pw: res.data.pw,
+                    instagram: res.data.instagram, twitter: res.data.twitter, proPic:res.data.proPic,
+                    profile_id: res.data.profile_id, friendsList_id: res.data.friendsList_id, playlist_id: res.data.playlist_id})
+            )
+            .catch(err =>
+                console.log(err)
+            );
+
+        console.log(id)
+    };
 
     render() {
         return (
@@ -24,8 +102,8 @@ class Profile extends Component {
             <Row id="profile-body" >
                 <Col id="profileData" size="md-6">
                     <ProView
-                        profilePic = {"http://thestrategicfellow.com/wp-content/uploads/2018/07/Placeholder.png"}
-                        userName = {"user name here"}
+                        profilePic = {this.state.proPic}
+                        userName = {this.state.userName}
                         userLocation = {"user location here"}
                         user411 = {"user 411 here"}
                         instagram={"Instagram"}

@@ -71,6 +71,10 @@ export default {
     getPlaylist: function(id) {
         return axios.get("/api/constellations/" + id);
     },
+    updatePlaylist: function (updatedData) {
+        console.log(updatedData.id);
+        return axios.put("/api/users/" + updatedData.id, updatedData);
+    },
     // Deletes the profile with the given id
     deletePlaylist: function(id) {
         return axios.delete("/api/constellations/" + id);

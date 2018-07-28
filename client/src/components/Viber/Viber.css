@@ -7,8 +7,8 @@
 
 }
 .proPic {
-    width: 5vh;
-    height: 5vh;
+    width: 10vh;
+    height: 10vh;
     border-radius: 50%;
 
 }
@@ -17,9 +17,10 @@
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 3vh;
     display:inline-block;
+    color: white;
 }
 
 #viber {
-    height:5vh;
+    height:9vh;
 
 }
